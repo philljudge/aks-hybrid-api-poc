@@ -25,7 +25,7 @@ spec:
         name: pochaakshybridapi
         resources: {}
 status: {}
----
+
 apiVersion: v1
 kind: Service
 metadata:
