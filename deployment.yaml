@@ -24,7 +24,9 @@ spec:
           containerPort: 80
         name: pochaakshybridapi
         resources: {}
-status: {}
+  status: {}
+
+---
 
 apiVersion: v1
 kind: Service
@@ -37,3 +39,4 @@ spec:
   ports:
   - protocol: TCP
     port: 80
+
