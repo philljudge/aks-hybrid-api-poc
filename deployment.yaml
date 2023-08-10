@@ -24,7 +24,6 @@ spec:
           containerPort: 80
         name: pochaakshybridapi
         resources: {}
-  status: {}
 
 ---
 
