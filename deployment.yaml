@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: pochaakshybridapi
+  name: pochaakshybridapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: pochaakshybridapi
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: pochaakshybridapi
+    spec:
+      containers:
+      - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridapi:1.0
+        ports:
+        - name: http
+          containerPort: 80
+        name: pochaakshybridapi
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pathways-cloud-api-svc
+spec:
+  selector:
+    run: pochaakshybridapi
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pathways-cloud-api-ingress
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          service:
+            name: pathways-cloud-api-svc
+            port:
+              number: 80
+        pathType: Prefix
