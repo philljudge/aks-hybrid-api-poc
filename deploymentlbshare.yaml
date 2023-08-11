@@ -20,7 +20,6 @@ spec:
       volumes:
       - name: my-azure-file-volume
         azureFile:
-          secretName: azure-secret
           shareName: pathshare
           readOnly: false
       containers:
