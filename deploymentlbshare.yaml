@@ -12,25 +12,27 @@ spec:
       run: pochaakshybridapi
   strategy: {}
   template:
-   volumes:
-   - name: my-azure-file-volume
-     storageName: pathshare
-     storageType: AzureFile
     metadata:
       creationTimestamp: null
       labels:
         run: pochaakshybridapi
     spec:
+      volumes:
+      - name: my-azure-file-volume
+        azureFile:
+          secretName: azure-secret
+          shareName: pathshare
+          readOnly: false
       containers:
-       volumeMounts:
-       - volumeName: my-azure-file-volume
-         mountPath: /myfileshare
       - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridapi:1.1
-        ports:
-        - name: http
-          containerPort: 80
         name: pochaakshybridapi
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: my-azure-file-volume
+          mountPath: /myfileshare
         resources: {}
+
 ---
 
 apiVersion: v1
