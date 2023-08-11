@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: pochaakshybridapi
+  name: pochaakshybridapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: pochaakshybridapi
+  strategy: {}
+  template:
+   volumes:
+    - name: my-azure-file-volume
+      storageName: pathshare
+      storageType: AzureFile
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: pochaakshybridapi
+    spec:
+      containers:
+       volumeMounts:
+       - volumeName: my-azure-file-volume
+         mountPath: /myfileshare
+      - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridapi:1.1
+        ports:
+        - name: http
+          containerPort: 80
+        name: pochaakshybridapi
+        resources: {}
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: pathways-cloud-api-svc
+spec:
+  type: LoadBalancer
+  selector:
+    run: pochaakshybridapi
+  ports:
+  - protocol: TCP
+    port: 80
