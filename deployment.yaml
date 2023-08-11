@@ -18,7 +18,7 @@ spec:
         run: pochaakshybridapi
     spec:
       containers:
-      - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridapi:1.0
+      - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridapi:1.1
         ports:
         - name: http
           containerPort: 80
