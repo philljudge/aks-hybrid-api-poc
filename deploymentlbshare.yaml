@@ -19,9 +19,8 @@ spec:
     spec:
       volumes:
       - name: my-azure-file-volume
-        azureFile:
-          shareName: pathshare
-          readOnly: false
+        storagename: permenant-storage-mount
+        storagetype: AzureFile
       containers:
       - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridapi:1.1
         name: pochaakshybridapi
