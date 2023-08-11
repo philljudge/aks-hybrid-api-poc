@@ -14,8 +14,8 @@ spec:
   template:
    volumes:
    - name: my-azure-file-volume
-      storageName: pathshare
-      storageType: AzureFile
+     storageName: pathshare
+     storageType: AzureFile
     metadata:
       creationTimestamp: null
       labels:
