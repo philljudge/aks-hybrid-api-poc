@@ -15,7 +15,7 @@ spec:
    volumes:
     - name: my-azure-file-volume
       storageName: pathshare
-      storageType: AzureFile
+    - storageType: AzureFile
     metadata:
       creationTimestamp: null
       labels:
