@@ -17,20 +17,21 @@ spec:
       labels:
         run: pochaakshybridapi
     spec:
-      volumes:
-      - name: my-azure-file-volume
-        storageName: permenant-storage-mount
-        storageType: AzureFile
       containers:
       - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridapi:1.1
-        name: pochaakshybridapi
-        ports:
-        - containerPort: 80
-        volumeMounts:
-        - name: my-azure-file-volume
+      volumeMounts:
+        - name: azurefileshare
           mountPath: /myfileshare
+      volumes:
+      - name: azurefileshare
+        azureFile:
+          shareName: /pathshare
+          readOnly: false
+        ports:
+        - name: http
+          containerPort: 80
+        name: pochaakshybridapi
         resources: {}
-
 ---
 
 apiVersion: v1
@@ -44,3 +45,4 @@ spec:
   ports:
   - protocol: TCP
     port: 80
+
