@@ -15,7 +15,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        run: pochaakshybridapi
+        run: pochaakshybridmessageprocessor
     spec:
       containers:
       - image: docker pull pochaakshybridapi20230726154153.azurecr.io/pochaakshybridmessageprocessor:1.1
