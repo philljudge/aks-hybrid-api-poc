@@ -18,6 +18,15 @@ spec:
         run: pochaakshybridmessageprocessor
     spec:
       containers:
-      - image: docker pull pochaakshybridapi20230726154153.azurecr.io/pochaakshybridmessageprocessor:1.1
+      - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridmessageprocessor:1.1
         name: pochaakshybridmessageprocessor
         resources: {}
+        volumeMounts:
+            - name: azurefile
+              mountPath: /myfileshare
+      volumes:
+        - name: azurefile
+          azureFile:
+            secretName: storage-secret
+            shareName: pathshare
+            readOnly: false
