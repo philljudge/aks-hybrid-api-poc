@@ -16,11 +16,20 @@ spec:
     spec:
       containers:
       - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridapi:1.1
+        name: pochaakshybridapi
         ports:
         - name: http
           containerPort: 80
-        name: pochaakshybridapi
-
+        resources: {}
+        volumeMounts:
+          - name: azurefile
+            mountPath: /myfileshare
+      volumes:
+        - name: azurefile
+          azureFile:
+            secretName: storage-secret
+            shareName: pathshare
+            readOnly: false
 ---
 
 apiVersion: v1
