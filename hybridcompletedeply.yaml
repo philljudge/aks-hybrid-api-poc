@@ -26,6 +26,30 @@ spec:
           containerPort: 80
         name: pochaakshybridapi
         resources: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: pochaakshybridmessageprocessor
+  name: pochaakshybridmessageprocessor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: pochaakshybridmessageprocessor
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: pochaakshybridmessageprocessor
+    spec:
+      containers:
+      - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridmessageprocessor:1.1
+        name: pochaakshybridmessageprocessor
+        resources: {}
         volumeMounts:  
         - name: nfs-volume
           mountPath: /myfileshare
@@ -35,3 +59,4 @@ spec:
             server: 192.168.0.201
             path: /data
 status: {}
+
