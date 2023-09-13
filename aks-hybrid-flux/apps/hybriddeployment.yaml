@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   creationTimestamp: null
-  namespace: default
   labels:
     run: pochaakshybridapi
   name: pochaakshybridapi
@@ -40,7 +39,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   creationTimestamp: null
-  namespace: default
   labels:
     run: pochaakshybridmessageprocessor
   name: pochaakshybridmessageprocessor
