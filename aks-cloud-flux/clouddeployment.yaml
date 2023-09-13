@@ -1,1 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: pochaakshybridapi
+  name: pochaakshybridapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: pochaakshybridapi
+  template:
+    metadata:
+      labels:
+        run: pochaakshybridapi
+    spec:
+      containers:
+      - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridapi:1.1
+        name: pochaakshybridapi
+        ports:
+        - name: http
+          containerPort: 80
+        resources: {}
+        volumeMounts:
+          - name: azurefile
+            mountPath: /myfileshare
+      volumes:
+        - name: azurefile
+          azureFile:
+            secretName: storage-secret
+            shareName: pathshare
+            readOnly: false
+---
 
+apiVersion: v1
+kind: Service
+metadata:
+  name: pathways-cloud-api-svc
+spec:
+  selector:
+    run: pochaakshybridapi
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pathways-cloud-api-ingress
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+    appgw.ingress.kubernetes.io/health-probe-path: "/serviceAPI/health"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        backend:
+          service:
+            name: pathways-cloud-api-svc
+            port:
+              number: 80
+        pathType: Prefix
