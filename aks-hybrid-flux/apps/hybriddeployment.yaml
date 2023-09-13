@@ -69,18 +69,3 @@ spec:
             server: 192.168.0.201
             path: /data
 status: {}
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: pochaakshybridapi
-  labels:
-    run: pochaakshybridapi
-spec:
-  selector:
-    run: pochaakshybridapi
-  type: LoadBalancer
-  ports:
-  - name: http
-    port: 80
-    targetPort: 80
