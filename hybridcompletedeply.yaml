@@ -20,12 +20,20 @@ spec:
       imagePullSecrets:
       - name: regcred
       containers:
-      - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridapi:1.0
+      - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridapi:latest
         ports:
         - name: http
           containerPort: 80
         name: pochaakshybridapi
         resources: {}
+        volumeMounts:  
+        - name: nfs-volume
+          mountPath: /myfileshare
+      volumes:
+        - name: nfs-volume
+          nfs:
+            server: 192.168.0.201
+            path: /data
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -46,6 +54,8 @@ spec:
       labels:
         run: pochaakshybridmessageprocessor
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - image: pochaakshybridapi20230726154153.azurecr.io/pochaakshybridmessageprocessor:1.1
         name: pochaakshybridmessageprocessor
@@ -59,4 +69,19 @@ spec:
             server: 192.168.0.201
             path: /data
 status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pochaakshybridapi
+  labels:
+    run: pochaakshybridapi
+spec:
+  selector:
+    run: pochaakshybridapi
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
 
