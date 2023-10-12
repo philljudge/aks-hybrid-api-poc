@@ -47,6 +47,7 @@ The next step is deploy a Network File Share (NFS) server on your hyper v host. 
 Please note, we did the minimum to run the deployment and the settings we used should not be used in a production environment. For example, in production you would secure the file share using with Access controls or similar, use the exports file to specify which clients can mount the share, implement firewall rules or configure host based authentication.
 
 For our server we used Ubuntu 22.04, the guide we followed can be found in the link below. 
+
 https://linuxhint.com/install-and-configure-nfs-server-ubuntu-22-04/ 
 
 Deploy the API
@@ -60,6 +61,7 @@ kubectl create secret docker-registry my-registry-secret
 Keep a record of the my-registry-secret (or whatever secret name you decide to use). This is needed later in the YAML deployment file.  The username and password for the file can be found in the Azure Container Registry. 
 
 In our setup we decided to leverage the GitOps feature to deploy the YAML configurations, this feature is made available to the Hybrid AKS cluster by Arc enabling the AKS cluster which was covered earlier in the guide.  GitOps is a technique for implementing continuous deployment for the application.  Changes to the workload environment, such as an application update, happen via pull request to the Git repository, after which Flux, running in each cluster, automatically syncs the changes and applies them to the cluster.  To setup and configure Gitops for the AKS Hybrid use the below guide.
+
 Tutorial: Deploy applications using GitOps with Flux v2 - Azure Arc | Microsoft Learn
 
 Deploy AKS
@@ -68,16 +70,18 @@ AKS in Azure
 For the deployment we decided to have both an on-premises AKS hybrid cluster instance, and a cloud instance, each following the same architectural deployment stamp to give suppliers 2 deployment options.
 
 The cloud AKS cluster could also acts as a failover in the event that an on-premises instance goes down. To deploy the AKS Cluster we followed the below guide.
+
 Kubernetes on Azure tutorial - Deploy a cluster - Azure Kubernetes Service | Microsoft Learn
 
 AKS integration with ACR
 The AKS cluster needs to be integrated to the Azure Registry Container.  Once this integration is in place the AKS cluster is assigned the relevant permissions to access the ACR and the images can be deployed to the AKS cluster.  To attach the ACR to the AKS cluster we used the below guide. 
+
 Integrate Azure Container Registry with Azure Kubernetes Service (AKS) - Azure Kubernetes Service | Microsoft Learn
 
 Azure File Share
 Just like the AKS Hybrid setup the AKS cloud cluster also requires persistent storage.  To achieve this in Azure we did not need to build any servers that need to be maintained.  In Azure we created an Azure File Share & this is where all the messages will be stored before the message processer transfers the files into Event Hub.  To create the file share we used the guide below.  The storage does need to be mounted to the AKS cluster for messages to be stored, this will be covered later when the guide is updated
-https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share?tabs=azure-cli
 
+https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share?tabs=azure-cli
 
 The following components should now be configured:	
 1)	Installed a VM to act as the AKS host
