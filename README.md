@@ -27,26 +27,11 @@ AKS and Arc
 Once the AKS Hybrid host is deployed, the next step is to deploy AKS on to the server, create a Kubernetes target cluster, and Arc-enable the AKS cluster. To do this we followed the following guide:  
 https://learn.microsoft.com/en-us/azure/aks/hybrid/aks-hci-evaluation-guide-2b 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 At this point you should have a deployment that looks something like the diagram below:
+
+
+![AKSHybrid ArcHLD](https://github.com/philljudge/aks-hybrid-api-poc/assets/131694192/0c0cea40-e625-4ad3-b326-89b0cb9720a5)
+
 
 
 The following components should now be configured:	
@@ -75,7 +60,6 @@ Keep a record of the my-registry-secret (or whatever secret name you decide to u
 In our setup we decided to leverage the GitOps feature to deploy the YAML configurations, this feature is made available to the Hybrid AKS cluster by Arc enabling the AKS cluster which was covered earlier in the guide.  GitOps is a technique for implementing continuous deployment for the application.  Changes to the workload environment, such as an application update, happen via pull request to the Git repository, after which Flux, running in each cluster, automatically syncs the changes and applies them to the cluster.  To setup and configure Gitops for the AKS Hybrid use the below guide.
 Tutorial: Deploy applications using GitOps with Flux v2 - Azure Arc | Microsoft Learn
 
-
 Deploy AKS
 
 AKS in Azure
@@ -101,18 +85,11 @@ The following components should now be configured:
 5)	An Azure Event hub to receive messages from supplier Environment
 6)	Azure Container Registry to store the application
 
-
-
-
-
-
-
-
-
-
-
 At this point you should have a deployment that looks similar to the diagram below:
 
+
+
+![AKSHybrid Arc AKSCloud NFS-HLD](https://github.com/philljudge/aks-hybrid-api-poc/assets/131694192/a4b0a605-c429-4291-8716-2ebecc45384d)
 
 
 Monitoring/Troubleshooting
