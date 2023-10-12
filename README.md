@@ -69,7 +69,7 @@ Keep a record of the my-registry-secret (or whatever secret name you decide to u
 
 In our setup we decided to leverage the GitOps feature to deploy the YAML configurations, this feature is made available to the Hybrid AKS cluster by Arc enabling the AKS cluster which was covered earlier in the guide.  GitOps is a technique for implementing continuous deployment for the application.  Changes to the workload environment, such as an application update, happen via pull request to the Git repository, after which Flux, running in each cluster, automatically syncs the changes and applies them to the cluster.  To setup and configure Gitops for the AKS Hybrid use the below guide.
 
-Tutorial: Deploy applications using GitOps with Flux v2 - Azure Arc | Microsoft Learn
+[Tutorial: Deploy applications using GitOps with Flux v2 - Azure Arc | Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/tutorial-use-gitops-flux2?tabs=azure-portal)
 
 Deploy AKS
 
