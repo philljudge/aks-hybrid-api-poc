@@ -25,7 +25,8 @@ https://learn.microsoft.com/en-us/azure/aks/hybrid/aks-hci-evaluation-guide-1
 
 AKS and Arc
 Once the AKS Hybrid host is deployed, the next step is to deploy AKS on to the server, create a Kubernetes target cluster, and Arc-enable the AKS cluster. To do this we followed the following guide:  
-  https://learn.microsoft.com/en-us/azure/aks/hybrid/aks-hci-evaluation-guide-2b 
+
+https://learn.microsoft.com/en-us/azure/aks/hybrid/aks-hci-evaluation-guide-2b 
 
 At this point you should have a deployment that looks something like the diagram below:
 
