@@ -79,7 +79,7 @@ For the deployment we decided to have both an on-premises AKS hybrid cluster ins
 
 The cloud AKS cluster could also acts as a failover in the event that an on-premises instance goes down. To deploy the AKS Cluster we followed the below guide.
 
-[Kubernetes on Azure tutorial - Deploy a cluster - Azure Kubernetes Service | Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/tutorial-kubernetes-deploy-cluster?tabs=azure-cli)
+https://learn.microsoft.com/en-us/azure/aks/tutorial-kubernetes-deploy-cluster?tabs=azure-cli 
 
 AKS integration with ACR
 
