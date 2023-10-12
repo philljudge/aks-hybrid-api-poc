@@ -85,7 +85,7 @@ AKS integration with ACR
 
 The AKS cluster needs to be integrated to the Azure Registry Container.  Once this integration is in place the AKS cluster is assigned the relevant permissions to access the ACR and the images can be deployed to the AKS cluster.  To attach the ACR to the AKS cluster we used the below guide. 
 
-Integrate Azure Container Registry with Azure Kubernetes Service (AKS) - Azure Kubernetes Service | Microsoft Learn
+[Integrate Azure Container Registry with Azure Kubernetes Service (AKS) - Azure Kubernetes Service | Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/cluster-container-registry-integration?tabs=azure-cli)
 
 Azure File Share
 
