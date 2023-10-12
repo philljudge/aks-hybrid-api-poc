@@ -43,7 +43,7 @@ The following components should now be configured:
 2)	Deployed the AKS service on the host
 3)	Arc enabled the AKS to cluster to allow remote management
 
-Deploy a NFS Server
+Deploy NFS Server
 
 The next step is deploy a Network File Share (NFS) server on your hyper v host. The NFS server acts as a persistent storage queue for the software running on the AKS cluster. It provides resilience should cloud connectivity be lost, or a pod fails.
 
