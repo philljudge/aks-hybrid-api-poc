@@ -1,4 +1,4 @@
-# AKS-Hybrid-api-poc
+# AKS-Hybrid & AKS Cloud api-deployment
 
 Achieving Distributed High Availability for Critical National Infrastructure with AKS Hybrid
 
