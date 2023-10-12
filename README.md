@@ -20,6 +20,7 @@ Prerequisites
 Deploy AKS Hybrid 
 AKS Hybrid Host
 To deploy the AKS hybrid environment, we followed the following evaluation guide. For the deployment we used a Standard ED16ds v4 (16 vCPUs, 128 Gib Memory) VM as our AKS hybrid host.
+
 https://learn.microsoft.com/en-us/azure/aks/hybrid/aks-hci-evaluation-guide-1 
 
 
