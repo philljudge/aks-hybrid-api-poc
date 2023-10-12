@@ -30,7 +30,7 @@ https://learn.microsoft.com/en-us/azure/aks/hybrid/aks-hci-evaluation-guide-2b
 At this point you should have a deployment that looks something like the diagram below:
 
 
-![AKSHybrid ArcHLD](https://github.com/philljudge/aks-hybrid-api-poc/assets/131694192/0c0cea40-e625-4ad3-b326-89b0cb9720a5)
+      ![AKSHybrid ArcHLD](https://github.com/philljudge/aks-hybrid-api-poc/assets/131694192/0c0cea40-e625-4ad3-b326-89b0cb9720a5)
 
 
 
