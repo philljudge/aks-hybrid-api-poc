@@ -71,6 +71,7 @@ Just like the AKS Hybrid setup the AKS cloud cluster also requires persistent st
 [Create an SMB Azure file share - Azure Files | Microsoft Learn](https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share?tabs=azure-cli)  
 
 Enable GitOps on AKS
+
 Coming soon.
 
 
@@ -90,9 +91,11 @@ kubectl create secret docker-registry my-registry-secret
 Keep a record of the my-registry-secret (or whatever secret name you decide to use). This is needed later in the YAML deployment file.  The username and password for the file can be found in the Azure Container Registry. 
 
 Configure AKS
+
 Coming soon.
 
 Edit Yaml in Repo and Push Changes to Both Clusters
+
 Coming soon.
 
 
@@ -110,9 +113,11 @@ At this point you should have a deployment that looks similar to the diagram bel
 
 
 Monitoring/Troubleshooting
+
 Coming soon.
 
 Security
+
 Coming soon.
 
 Now that all the steps are competed you have an infrastructure that can underpin an AKS Hybrid (Supplier environment) and AKS cloud environment.  In future articles I will be doing a breakdown of the full installation and going through each service step by step.  It will also cover the steps to install the application from the GitHub repository and how you can use Gitops to manage the state of the application running in the clusters. 
