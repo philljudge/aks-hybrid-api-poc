@@ -42,6 +42,7 @@ The next step is deploy a Network File Share (NFS) server on your hyper v host. 
 Please note, we did the minimum to run the deployment, the settings we used should not be used in a production environment. For example, in production you would secure the file share with Access controls or similar, use the exports file to specify which clients can mount the share, implement firewall rules or configure host-based authentication.
 
 For our server we used Ubuntu 22.04, the guide we followed can be found in the link below. 
+
 https://linuxhint.com/install-and-configure-nfs-server-ubuntu-22-04/ 
 
 
