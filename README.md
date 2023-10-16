@@ -92,11 +92,11 @@ Keep a record of the my-registry-secret (or whatever secret name you decide to u
 
 Configure AKS
 
-Coming soon.
+Coming soon
 
 Edit Yaml in Repo and Push Changes to Both Clusters
 
-Coming soon.
+Coming soon
 
 
 The following components should now be configured:	
