@@ -80,8 +80,11 @@ Configure AKS Hybrid
 The AKS Kubernetes YAML deployment file references the ACR image we want to deploy, but to be able to pull the image the AKS Hybrid cluster needs a secret. We create this using the command below.
 
 kubectl create secret docker-registry my-registry-secret 
+
 -- docker-username=DOCKER_USER 
+
 -- docker-password=DOCKER_PASSWORD 
+
 -- docker-email=DOCKER_EMAIL
 
 Keep a record of the my-registry-secret (or whatever secret name you decide to use). This is needed later in the YAML deployment file.  The username and password for the file can be found in the Azure Container Registry. 
