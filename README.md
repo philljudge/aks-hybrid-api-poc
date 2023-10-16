@@ -68,7 +68,7 @@ The AKS cluster needs to be integrated to the Azure Registry Container.  Once th
 Azure File Share
 Just like the AKS Hybrid setup the AKS cloud cluster also requires persistent storage.  To achieve this in Azure we did not need to build any servers that need to be maintained.  In Azure we created an Azure File Share & this is where all the messages will be stored before the message processer transfers the files into Event Hub.  To create the file share we used the guide below.  The storage does need to be mounted to the AKS cluster for messages to be stored, this will be covered later when the guide is updated
 
-https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share?tabs=azure-cli
+Create an SMB Azure file share - Azure Files | Microsoft Learn
 
 Enable GitOps on AKS
 Coming soon.
