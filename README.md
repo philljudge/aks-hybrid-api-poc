@@ -19,13 +19,13 @@ Deploy AKS Hybrid
 AKS Hybrid Host
 To deploy the AKS hybrid environment, we followed the following evaluation guide. For the deployment we used a Standard ED16ds v4 (16 vCPUs, 128 Gib Memory) VM as our AKS hybrid host.
 
-https://learn.microsoft.com/en-us/azure/aks/hybrid/aks-hci-evaluation-guide-1 
+[Prepare an Azure Virtual Machine for AKS hybrid evaluation - AKS hybrid | Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/hybrid/aks-hci-evaluation-guide-1)  
 
 
 AKS and Arc
 Once the AKS Hybrid host is deployed, the next step is to deploy AKS on to the server, create a Kubernetes target cluster, and Arc-enable the AKS cluster. To do this we followed the following guide:  
 
-https://learn.microsoft.com/en-us/azure/aks/hybrid/aks-hci-evaluation-guide-2b 
+[Deploy AKS infrastructure using PowerShell - AKS hybrid | Microsoft Learn](https://learn.microsoft.com/en-us/azure/aks/hybrid/aks-hci-evaluation-guide-2b)  
 
 At this point you should have a deployment that looks something like the diagram below:
 
