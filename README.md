@@ -8,7 +8,7 @@ Please note, this guide is work in progress and over the coming weeks and months
 
 To complete the deployment we created an environment that mirrored an on-premises server infrastructure. To do this you will need the following:
 
-Prerequisites
+Prerequisites:
 1)	An azure tenant 
 2)	A subscription in the tenant
 3)	Relevant permissions on the subscription to build resources 
