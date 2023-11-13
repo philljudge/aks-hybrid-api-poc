@@ -1,4 +1,4 @@
-Achieving Distributed High Availability for Critical National Infrastructure with AKS Hybrid
+Achieving Distributed High Availability for Infrastructure with AKS Hybrid
 
 Azure Stack HCI (hyperconverged infrastructure) is a virtualisation host that runs on-premises on validated partner hardware. AKS Hybrid is an on-premise implementation of Azure Kubernetes Service (AKS) orchestrator which automates running containerised applications at scale and runs on Windows Server with Hyper-V, and the Stack HCI platform. Together they provide a solution for hosting highly available workloads on-premises. Azure Arc is a cloud based control plane which can be used for managing on-premises AKS Hybrid instances. Flux is an open-sourced set of continuous delivery solutions for Kubernetes. AKS and AKS Hybrid natively support Flux through their GitOps capabilities.
 
